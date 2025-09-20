@@ -1,99 +1,62 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int[] ints1= {1,2,3};
+int[] ints2= new int[3]; // 0,0,0
 
+Console.WriteLine("ints1 length is {0}", ints1.Length);
+Console.WriteLine("ints1[1] is {0}",ints2[1]);
 
-int i = 33;
-short sh = 0;
-long lo = 0;
-Console.WriteLine("gi =" + i);
-
-Console.WriteLine("i = {0},{1}", i, "string55");
-
-double d = 0;
-double d1 = 0d;
-float f = 0;
-float f1 = 0f;
-decimal dm1 = 0;
-decimal dm2 = 0m;
-bool b = false;
-
-char c1 = 'A';
-char c2 = 'a';
-
-string s1 = "this is a string";
-const string s2 = "this is another string";
-Console.WriteLine(s1 + s2);
-
-const int il = 10;
-
-var d5 = 0d;
-var f5 = 0f;
-var dm5 = 5m;
-var cc = 'B';
-var s3 = "string";
-
-var r1 = (d + f) * 4 / 2;
-var r2 = 14 / 3;
-var r3 = 14 % 3;
-var r4 = 14d / 3;
-var r5 = 14f / 3;
-var r6 = s1 + s2;
-Console.WriteLine("s1 + s2 ={0}", r6);
-
-var r7 = s1 + d + f + i + c1 + b;
-Console.WriteLine("r7={0}", r7);
-
-var b1 = true;
-var b2 = false;
-var b3 = b1 && b2;
-var b4 = b1 || b2;
-Console.WriteLine("true&&false={0}", b3);
-Console.WriteLine("true || false={0}", b4);
-
-if (b1) Console.WriteLine("b1 is true");
-if (!b2) Console.WriteLine("b1 is false");
-
-if (b1 && b2)
+int[,] ints3 =
 {
-    Console.WriteLine("b1 is true");
-    Console.WriteLine("b2 is true");
-}
-else
-{
-    Console.WriteLine("b1 && b2 is false");
-}
+   {1,2,3},
+   {4,5,6}
 
-Console.WriteLine("boolean test");
-if (b1)
-{
-    if (b2) Console.WriteLine("b1&&b2 is true");
-    else Console.WriteLine("b1 is true, b2 is flase");
-}
-else Console.WriteLine("b1 is false");
-
-
-//00:57
-
-int i2 = (b1 && b2)? 1: 0;
-
-int i3 = 3;
-switch(i3)
-{
-    case 1:
-        Console.WriteLine("i3 =1");
-        break;
-    case 2:
-        Console.WriteLine("i3=2");
-        break;
-    default:
-        Console.WriteLine("i3>2");
-        break;    
-}
-
-// pattern matching
-var s5 = i3 switch
-{
-    1=>"i3 is 1",
-    2=>"i3 is 2",
-    _=>"i3 >2"
 };
+
+Console.WriteLine("ints3[1,1] is {0}", ints3[1,1]);
+Console.WriteLine("ints3[1,2] is {0}", ints3[1,2]);
+
+string[] s = 
+{ 
+    "string1",
+    "string2",
+    "string3",
+    "string4",
+};
+
+
+// 在這裡宣告 ints5，只宣告一次
+int[] ints5 = { 1, 2, 3 };
+
+Console.WriteLine("For loop");
+
+// 使用正確的變數名 ints5
+for (int i = 0; i < ints5.Length; i++)
+{
+    // 使用正確的變數名 ints5
+    Console.WriteLine("ints5[{0}] is {1}", i, ints5[i]);
+}
+
+Console.WriteLine("While loop");
+int j =0;
+while(true){
+    Console.WriteLine("ints5[{0}] is {1}", j, ints5[j]);
+    j++;
+    if(j == ints5.Length) break;
+}
+
+Console.WriteLine("do......while loop");
+int k = 0;
+do {
+    Console.WriteLine($"ints5[{k}] is {ints5[k]}");
+    k++;
+} while(k < ints5.Length);
+// 01:28
+Console.WriteLine("for loop, to print odd numbers");
+// 修正：宣告 i 的型別
+for (int i = 0; i < ints5.Length; i++) 
+{
+    // 如果是偶數，就跳過
+    if (ints5[i] % 2 == 0) continue; 
+    
+    // 修正：使用正確的陣列名稱 ints5
+    Console.WriteLine($"ints5[{i}] = {ints5[i]}");
+}
