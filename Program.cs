@@ -73,3 +73,27 @@ else Console.WriteLine("b1 is false");
 
 
 //00:57
+
+int i2 = (b1 && b2)? 1: 0;
+
+int i3 = 3;
+switch(i3)
+{
+    case 1:
+        Console.WriteLine("i3 =1");
+        break;
+    case 2:
+        Console.WriteLine("i3=2");
+        break;
+    default:
+        Console.WriteLine("i3>2");
+        break;    
+}
+
+// pattern matching
+var s5 = i3 switch
+{
+    1=>"i3 is 1",
+    2=>"i3 is 2",
+    _=>"i3 >2"
+};
